@@ -36,5 +36,5 @@ app.get('/', (req, res)=>{
 
 
 app.listen(port, ()=>{
-	console.log(`serving my master on port 3001x ${port}`)
+	console.log(`serving my master on port ${port}`)
 })
