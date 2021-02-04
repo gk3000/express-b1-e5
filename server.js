@@ -1,6 +1,7 @@
 const express = require('express')
 const app=express()
 const {create,read,update, deleteAccount}=require('./Service/bankService')
+let port = process.env.PORT || 8080
 
 app.get('/account/new/:accountID/:amount', (req, res)=>{
     const {accountID,amount}=req.params
@@ -29,9 +30,11 @@ app.get('/:accountID/delete', (req, res)=>{
     res.send(`Account nr ${accountID} deleted`)
 })	
 
+app.get('/', (req, res)=>{
+    res.send(`Hello, try using API from the description of the exercise to make requests to the server.`)
+})
 
 
-
-app.listen(3001, ()=>{
-	console.log('serving my master on port 3001x')
+app.listen(port, ()=>{
+	console.log(`serving my master on port 3001x ${port}`)
 })
